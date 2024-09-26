@@ -459,6 +459,3 @@
 .navbar-default .navbar-collapse:not(.in):not(.collapsing) .navbar-nav li > a:hover:after {
   background: #93dc8a;
 }
-body {
-  padding-top: 70px;
-}

@@ -10,27 +10,33 @@ description = "Default layout"
         <meta name="author" content="Winter CMS">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="Winter CMS">
-        <link rel="icon" type="image/png" href="{{ 'assets/images/winter.png'|theme }}">
-        <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
-        <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
+       <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet"> 
+        <link href="{{ 'assets/css/styles.css'|theme }}" rel="stylesheet">
         {% styles %}
     </head>
     <body>
 
         <!-- Header -->
-        <header id="layout-header">
-            {% partial 'site/header' %}
+         <header id="layout-header">
+            {% partial 'site/header_main' %}
         </header>
+      <div id="image-container">
+             <img id="body-first-pic" src="{{ 'BODY.png' | media }}" alt="Logo-link">
+       </div>
 
+      <section id="layout-content">
+         {% partial 'site/about_us' %}
+        </section>
         <!-- Content -->
-        <section id="layout-content">
+       {## <section id="layout-content">
             {% page %}
         </section>
 
         <!-- Footer -->
         <footer id="layout-footer">
             {% partial 'site/footer' %}
-        </footer>
+        </footer>##}
 
         <!-- Scripts -->
         <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>

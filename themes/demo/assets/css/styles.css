@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'CenturyGothic';
+    src: url('../fonts/century-gothic-regular.ttf');
+    
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: 'DMSans-Regular';
+    src: url('../fonts/centurygothic.ttf');
+    src: url('../fonts/DMSans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Butler-Medium';
+    src: url('../fonts/Butler-Medium.woff');
+    
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  body {
+    padding-top: 10px;
+    margin: 0; /* Remove default margins */
+    height: 100%; /* Full height */
+    background-color: #FFFEFD;
+  }
+
+
+/* коричнева кнопка  */
+
+.round-button {
+    background-color: #A3836E; /* Колір кнопки */
+    color: white; /* Колір стрілочки */
+    border: none; /* Без рамки */
+    border-radius: 50%; /* Робить кнопку круглою */
+    width: 60px; /* Ширина кнопки */
+    height: 60px; /* Висота кнопки */
+    display: flex; /* Центрування стрілочки */
+    align-items: center; /* Вертикальне вирівнювання */
+    justify-content: center; /* Горизонтальне вирівнювання */
+    font-size: 29px; /* Розмір стрілочки */
+    cursor: pointer; /* Курсор у вигляді руки при наведенні */
+    transition: background-color 0.3s ease; /* Плавна зміна кольору при наведенні */
+}
+
+.round-button:hover {
+    background-color: #775f4e; /* Зміна кольору при наведенні */
+}
+
+nav {
+    position: fixed; /* Фіксуємо навбар */
+    top: 0; /* Закріплюємо зверху */
+    left: 0; /* Вирівнюємо по лівому краю */
+    right: 0; /* Вирівнюємо по правому краю */
+    background-color: #ffffff; /* Колір фону (можна змінити) */
+    z-index: 1000; /* Задаємо z-index, щоб перекрити інші елементи */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легка тінь для покращення видимості */
+}
+
+
+#logo-container {
+    /* margin-left: 0; */
+    padding: 20px;
+}
+
+#round-button-nav {
+    /* margin-right: 0; */
+    padding: 20px;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Center vertically */
+    position: relative; /* To position the round button */
+}
+
+#nav-container{
+font-family:'DMSans-Regular', sans-serif;
+
+font-weight: normal; 
+    line-height: 1;
+    letter-spacing: 2px;
+
+}
+
+#nav-container .nav li a {
+    color: #A6A5A7;
+    font-size: 18px;
+    transition: color 0.3s ease; /* Плавна зміна кольору */
+
+}
+
+#nav-container .nav li a:hover {
+    color: #ffffff; /* Колір тексту при наведенні */
+    background-color: rgba(166, 165, 167, 0.2); /* Легкий фон для підсвічування */
+    border-radius: 5px; /* Закруглення країв фону (за бажанням) */
+}
+
+#nav-container .nav {
+    list-style: none; /* Вимикаємо стандартні маркери списку */
+    justify-content: space-around; /* Distribute space among the items */
+    flex: 1; /* Allow it to grow to fill space */
+    display: flex; /* Використовуємо flexbox для горизонтального розташування */
+    
+}
+
+#nav-container .nav li {
+    display: flex; /* Додаємо flex для вирівнювання елементів */
+    align-items: center; /* Вирівнюємо по центру вертикально */
+    position: relative; /* Позиція для псевдоелемента */
+    padding: 0 10px; /* Внутрішні відступи */
+}
+
+#nav-container .nav li:not(:last-child)::after {
+    content: "|"; /* Роздільник */
+    position: absolute; /* Абсолютне позиціонування */
+    height: 30px;
+    right: 0; /* Вирівнювання по правому краю */
+    top: 27px; /* Вирівнювання по верхньому краю */
+    color: #5E5E5E; /* Колір роздільника */
+    margin-left: 10px; /* Відступ між текстом і роздільником */
+}
+
+#image-container {
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items to the top */
+    height: calc(100vh - 70px); /* Full viewport height minus navbar height */
+    padding-top: 70px; /* Space for the navbar */
+    overflow: hidden; /* Prevent overflow */
+}
+
+#body-first-pic {
+    max-width: 100%; /* Ensure it doesn’t exceed the width of the container */
+    max-height: 100%; /* Ensure it doesn’t exceed the height of the container */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible */
+    display: block; /* Prevent extra space below the image */
+}
+
+
+/* ABout us */
+#container-about-us{
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items to the top */
+
+}
+
+
+.line {
+    width: 70%; /* Ширина лінії 70% */
+    height: 2px; /* Товщина лінії */
+    background-color: #000; /* Колір лінії */
+    margin: 20px auto; /* Центрування лінії */
+}
+
+#we_are_multi img {
+    width: 70%; /* Makes the image 60% smaller */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 100%; /* Prevents overflow */
+    padding-left: 20px;
+    padding-top: 20px;
+
+}
+#container-about-us {
+    display: flex; /* Включаємо Flexbox */
+    width: 100%; /* Ширина контейнера 100% */
+    padding: 30px 15px;
+}
+
+#element1-about-us {
+    flex: 2; /* 2/6 */
+    min-width: 100px; /* Мінімальна ширина */
+}
+
+#element2-about-us {
+    flex: 3; /* 3/6 */
+    min-width: 400px; /* Мінімальна ширина */
+    padding: 0px 25px;
+    display: flex; /* Включаємо Flexbox */
+    flex-direction: column; /* Ставимо елементи в стовпчик */
+}
+
+#element3-about-us {
+    flex: 1; /* 1/6 */
+    min-width: 100px; /* Мінімальна ширина */
+}
+
+#element2-about-us p {
+    color: #444444;
+    font-family: 'CenturyGothic', sans-serif;
+    text-align: justify;
+    font-weight: normal; 
+    font-size: 22px;
+    margin-bottom: 10px; /* Відстань між текстом та кнопкою */
+}
+
+.button-container {
+    display: flex; /* Включаємо Flexbox для контейнера кнопки */
+    justify-content: flex-end; /* Вирівнює кнопку вправо */
+    width: 100%; /* Ширина контейнера кнопки 100% */
+}
+
+.custom-button {
+    background-color: #C9DB47; /* Встановлюємо колір кнопки */
+    color: #444444; /* Колір тексту */
+    border: none; /* Прибираємо обводку */
+    padding: 10px 20px; /* Внутрішні поля кнопки */
+    font-size: 16px; /* Розмір шрифту */
+    cursor: pointer; /* Показує, що кнопка клікабельна */
+    border-radius: 30px; /* Закруглення кутів */
+    transition: background-color 0.3s; /* Плавний перехід кольору фону */
+    font-family: 'Butler-Medium', sans-serif;
+    font-weight: normal; 
+    font-size: 18px;
+    margin-top: 10px; /* Відстань зверху для кнопки */
+}
+
+.custom-button:hover {
+    background-color: #B0C83A; /* Колір кнопки при наведенні */
+}
