@@ -17,7 +17,7 @@ jobs:
 
       - name: Deploy to GoDaddy via FTP
         env:
-          FTP_USERNAME: ${{ secrets.adelin9999@link-us.eu }}
+          FTP_USERNAME: ${{ secrets.adelin9999 }}
           FTP_PASSWORD: ${{ secrets.T4j!9kL@8mB#2nQ}}
           FTP_SERVER: ${{ secrets.ftp.link-us.eu }}
         run: |
