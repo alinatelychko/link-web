@@ -1,0 +1,30 @@
+name: Deploy to GoDaddy
+
+on:
+  push:
+    branches:
+      - main  # Або будь-яка інша гілка, яку ви хочете використовувати
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install FTP client
+        run: sudo apt-get install -y lftp
+
+      - name: Deploy to GoDaddy via FTP
+        env:
+          FTP_USERNAME: ${{ secrets.adelin9999@link-us.eu }}
+          FTP_PASSWORD: ${{ secrets.T4j!9kL@8mB#2nQ}}
+          FTP_SERVER: ${{ secrets.ftp.link-us.eu }}
+        run: |
+          lftp -f "
+          set ftp:ssl-allow no
+          open $FTP_SERVER
+          user $FTP_USERNAME $FTP_PASSWORD
+          mirror --reverse --delete --verbose ./ /public_html/
+          bye
+          "
