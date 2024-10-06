@@ -1,6 +1,8 @@
 {
     "devDependencies": {
-        "laravel-mix": "^6.0.41"
+        "eslint": "^8.57.1",
+        "laravel-mix": "^6.0.41",
+        "prettier": "^3.3.3"
     },
     "workspaces": {
         "packages": [

@@ -1,0 +1,78 @@
+<div class="container_privilage_clients">
+    <div class="image-wrapper privilege-image">
+        <img class="responsive-image" src="{{ 'privilage.png' | media }}" alt="Privilege">
+    </div>
+<div  class="privilage_clients_central">
+    <div class="scroll-container">
+        <ul class="scroll-list">
+            <li class="scroll-item">Experiences &amp; Activations</li>
+            <li class="scroll-item">Lead the project from 0 to the end</li>
+            <li class="scroll-item">PROFESSIONAL QUALITY</li>
+            <li class="scroll-item">Digital Brand Expression</li>
+            <li class="scroll-item">Brand Strategy</li>
+             <li class="scroll-item">Experiences &amp; Activations</li>
+            <li class="scroll-item">Lead the project from 0 to the end</li>
+            <li class="scroll-item">PROFESSIONAL QUALITY</li>
+            <li class="scroll-item">Digital Brand Expression</li>
+            <li class="scroll-item">Brand Strategy</li>
+             <li class="scroll-item">Experiences &amp; Activations</li>
+            <li class="scroll-item">Lead the project from 0 to the end</li>
+            <li class="scroll-item">PROFESSIONAL QUALITY</li>
+            <li class="scroll-item">Digital Brand Expression</li>
+            <li class="scroll-item">Brand Strategy</li>
+        </ul>
+         <div class="cursor"></div>
+    </div>
+<div class="green-dot"></div>
+
+</div>
+    <div class="image-wrapper clients-image">
+        <img class="responsive-image" src="{{ 'clients.png' | media }}" alt="Clients">
+    </div>
+</div>
+
+
+<script>
+const scrollContainer = document.querySelector('.scroll-container');
+const scrollList = document.querySelector('.scroll-list');
+const scrollItems = document.querySelectorAll('.scroll-item');
+
+let scrollPosition = 0; // Позиція скроллу
+
+// Функція для оновлення активного елемента
+function updateActiveItem() {
+    const centerY = scrollContainer.getBoundingClientRect().top + (scrollContainer.clientHeight / 2);
+    scrollItems.forEach(item => {
+        const itemRect = item.getBoundingClientRect();
+        const itemCenterY = itemRect.top + (itemRect.height / 2);
+        
+        // Перевіряємо, чи центр елемента в центрі контейнера
+        if (itemCenterY >= centerY - (itemRect.height / 2) && itemCenterY <= centerY + (itemRect.height / 2)) {
+            item.classList.add('active'); // Додаємо клас для активного елемента
+        } else {
+            item.classList.remove('active'); // Прибираємо клас для неактивних елементів
+        }
+    });
+}
+
+// Прокрутка вгору/вниз
+scrollContainer.addEventListener('wheel', (event) => {
+    event.preventDefault(); // Припиняємо стандартну прокрутку
+    scrollPosition += event.deltaY; // Отримуємо швидкість прокрутки
+
+    // Обчислюємо нову позицію
+    if (scrollPosition > (scrollItems.length * 40)) {
+        scrollPosition = 0; // Скидаємо позицію, якщо перевищуємо кількість елементів
+    } else if (scrollPosition < 0) {
+        scrollPosition = (scrollItems.length * 40) - 40; // Скидаємо позицію, якщо нижче нуля
+    }
+
+    scrollList.style.transform = `translateY(-${scrollPosition}px)`; // Застосовуємо прокрутку
+    updateActiveItem(); // Оновлюємо активні елементи
+});
+
+// Запускаємо оновлення активного елемента
+setInterval(updateActiveItem, 100);
+
+
+</script>

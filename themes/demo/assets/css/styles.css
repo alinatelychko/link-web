@@ -227,3 +227,204 @@ font-weight: normal;
 .custom-button:hover {
     background-color: #B0C83A; /* Колір кнопки при наведенні */
 }
+
+
+
+/* Main privilege clients */
+.container_privilage_clients {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Center items */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrollbars */
+    max-height: 900px;
+}
+
+/* Style each image wrapper */
+.image-wrapper {
+    flex: 1; /* Take up equal space in the flex container */
+    width: 100%; /* Full width of the container */
+    position: relative; /* Positioning context for child elements */
+    overflow: hidden; /* Hide overflowing parts of the image */
+    padding-left: 8%;
+    padding-right: 8%;
+    height: 200px;
+}
+
+/* Style the privilege image to have a specific height */
+.privilege-image {
+    height: 80%; /* Set height to 80% of its container */
+    transform: translateY(-10%); /* Shift the image up by 10% to hide the top */
+}
+
+/* Style the clients image to have the same height */
+.clients-image {
+    height: 80%; /* Set height to 80% of its container */
+    transform: translateY(10%); /* Shift the image down by 10% to hide the bottom */
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+/* Style the images to ensure they fit nicely */
+.responsive-image {
+    width: 100%; /* Ensure the image takes full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the images cover their container */
+}
+
+.scroll-container {
+    width: 550px;
+    position: relative;
+    height: 250px; /* Збільшуємо висоту контейнера, щоб бачити більше 5 елементів */
+    overflow: hidden; /* Приховуємо все, що виходить за межі */
+    cursor: pointer; /* Змінюємо курсор на вказівник */
+    margin-top: 20px; /* Відступ зверху */
+    padding: 20px;
+}
+
+.scroll-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.3s ease; /* Додаємо плавність до прокрутки */
+    display: flex; /* Відображаємо елементи в рядок */
+    flex-direction: column; /* Вирівнюємо елементи по вертикалі */
+
+}
+
+.scroll-item {
+    font-family: 'Butler-Medium';
+    font-size: 24px;
+    height: 50px; /* Висота кожного елемента */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease; /* Анімація для збільшення */
+}
+
+.scroll-item.active {
+    transform: scale(1.5); /* Збільшення активного елемента */
+    z-index: 1; /* Піднімає елемент на передній план */
+}
+
+
+.green-dot {
+    width: 18px; /* Ширина точки */
+    height: 18px; /* Висота точки */
+    background-color: #C9DB47; /* Зелений колір */
+    border-radius: 60%; /* Закруглення для створення кола */
+    margin-left: 30px;
+    color: #000;
+}
+
+.privilage_clients_central{
+    display: flex; /* Включаємо Flexbox для контейнера */
+    align-items: center; /* Центруємо вертикально */
+padding-bottom: 120px;
+}
+
+/* Загальний контейнер */
+.trusted_companies_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центруємо по вертикалі */
+    align-items: center; /* Центруємо по горизонталі */
+    height: 100vh; /* Контейнер займатиме всю висоту екрану */
+    text-align: center; /* Текст центрується */
+    padding: 20px;
+    box-sizing: border-box; /* Враховуємо padding у розрахунках ширини/висоти */
+}
+
+/* Стилізація для тексту */
+.trusted_companies {
+    font-size: 25px; /* Розмір шрифту для заголовка */
+    font-family:'CenturyGothic';
+    margin-bottom: 20px; /* Відступ від тексту до картинки */
+    color: #282828;
+}
+
+
+
+/* Контейнер для картинки */
+.trusted_companies_pic img {
+    max-width: 95%; /* Зображення адаптується до ширини контейнера, не більше 80% */
+    height: auto; /* Збереження співвідношення сторін */
+}
+
+/* Для адаптивності */
+@media screen and (max-width: 768px) {
+    .trusted_companies {
+        font-size: 1.5em; /* Зменшуємо текст на менших екранах */
+    }
+
+    .trusted_companies_pic img {
+        max-width: 100%; /* Зображення займатиме всю ширину контейнера */
+    }
+}
+
+
+
+/* Основний контейнер */
+.we_help_wrapper {
+    display: flex;
+    justify-content: space-between; /* Простір між текстом і зображенням */
+    align-items: center; /* Вирівнюємо елементи по вертикалі */
+    padding: 40px; /* Відступи навколо блоку */
+    box-sizing: border-box;
+    height: 100vh; /* Займаємо всю висоту екрану */
+background-color: #E3DEDB;
+}
+
+/* Контейнер для лівої частини (текст і заголовок) */
+.we_help_content {
+    flex: 1; /* Ліва частина займатиме більше простору */
+    max-width: 50%; /* Ліва частина займатиме не більше половини */
+}
+
+.we_help_left_part img {
+    max-width: 100%; /* Зображення займає всю доступну ширину контейнера */
+    height: auto; /* Зберігаємо пропорції зображення */
+}
+
+.we_help_text {
+    margin-top: 20px; /* Відступ між заголовком і текстом */
+    font-size: 1.2em; /* Текст дещо більший */
+    line-height: 1.6; /* Поліпшення читабельності */
+}
+
+/* Контейнер для зображення */
+.we_help_pic {
+    flex: 1; /* Займає решту доступного простору */
+    max-width: 45%; /* Обмеження ширини зображення */
+    display: flex;
+    justify-content: center;
+}
+
+.we_help_pic img {
+    max-width: 100%; /* Зображення адаптується до контейнера */
+    height: auto; /* Зберігаємо пропорції */
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media screen and (max-width: 768px) {
+    .we_help_wrapper {
+        flex-direction: column; /* Перемикаємо на вертикальне вирівнювання для мобільних */
+        height: auto; /* Висота автоматично підлаштовується */
+        padding: 20px;
+    }
+
+    .we_help_content, .we_help_pic {
+        max-width: 100%; /* Елементи займають всю ширину на мобільних */
+    }
+
+    .we_help_text {
+        font-size: 1em; /* Зменшуємо текст для мобільних */
+        text-align: center; /* Текст по центру */
+        margin-top: 15px;
+    }
+
+    .we_help_pic img {
+        max-width: 80%; /* Зображення менше на мобільних */
+    }
+}
