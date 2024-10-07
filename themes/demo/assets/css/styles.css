@@ -66,6 +66,11 @@ nav {
 #logo-container {
     /* margin-left: 0; */
     padding: 20px;
+    height: 50px;
+}
+#logo-container img{
+    margin-top: -17px;
+    height: 45px;
 }
 
 #round-button-nav {
@@ -384,14 +389,47 @@ background-color: #E3DEDB;
 
 .we_help_left_part img {
     max-width: 100%; /* Зображення займає всю доступну ширину контейнера */
-    height: auto; /* Зберігаємо пропорції зображення */
+    height: 200px; /* Зберігаємо пропорції зображення */
+margin-left: -10px;
 }
 
 .we_help_text {
     margin-top: 20px; /* Відступ між заголовком і текстом */
-    font-size: 1.2em; /* Текст дещо більший */
+  
     line-height: 1.6; /* Поліпшення читабельності */
+    font-size: 20px; /* Розмір шрифту для заголовка */
+    font-family:'CenturyGothic';
+    max-width: 500px;
+    text-align: justify;
 }
+
+
+/* Контейнер для кнопки */
+.we-help-button-wrapper {
+    position: relative; /* Позиціонування відносно цього контейнера */
+    display: inline-block;
+    width: 100%; /* Ширина контейнера, за потреби */
+    height: 100px; /* Фіксована висота контейнера для прикладу */
+}
+
+/* Кнопка з абсолютним позиціонуванням */
+.we-help-button {
+    position: absolute;
+    bottom: 0; /* Кнопка внизу контейнера */
+    right: 0; /* Кнопка в правому куті */
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Картинка всередині кнопки */
+.button-image {
+    height: 70px; /* Висота зображення */
+    display: block;
+}
+
+
 
 /* Контейнер для зображення */
 .we_help_pic {
@@ -399,6 +437,7 @@ background-color: #E3DEDB;
     max-width: 45%; /* Обмеження ширини зображення */
     display: flex;
     justify-content: center;
+   
 }
 
 .we_help_pic img {
