@@ -3,7 +3,7 @@ name: Deploy to GoDaddy
 on:
   push:
     branches:
-      - main  # Або будь-яка інша гілка, яку ви хочете використовувати
+      - main  
 
 jobs:
   deploy:
