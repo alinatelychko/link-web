@@ -433,11 +433,12 @@ margin-left: -10px;
     cursor: pointer;
 }
 
-/* Картинка всередині кнопки */
-.button-image {
-    height: 70px; /* Висота зображення */
+.we-help-button img{
+    height: 80px;
     display: block;
 }
+/* Картинка всередині кнопки */
+
 
 
 
@@ -631,15 +632,57 @@ padding: 70px 30px;
 /* contact */
 
 
-.lets-dievise img{
-    height: 200px;
-    display: flex;               /* Enable flexbox */
-    justify-content:end;      /* Center horizontally */
-    align-items:end;    
+/* Контейнер для всього блоку */
+.lets-devise-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items:end; /* Center the items horizontally */
+    width: 100%; /* Set full width for the container */
+    margin: 0 auto; /* Center the whole block */
+    padding: 100px;
 }
+
+/* Стиль для зображення "let's devise" */
+.lets-devise img {
+    height: 200px;
+    display: block; /* Block to ensure it's treated as a single element */
+    margin: 0 auto; /* Center the image */
+}
+
+/* Лінія під зображенням */
 .line-contact {
-    width: 70%; /* Ширина лінії 70% */
-    height: 4px; /* Товщина лінії */
-    background-color: #000; /* Колір лінії */
-    margin: 20px auto; /* Центрування лінії */
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    margin: 20px auto; /* Center the line horizontally */
+}
+
+/* Контейнер для тексту та кнопки */
+.contact-button-wrapper {
+    display: flex; /* Display items in a horizontal row */
+    align-items:flex-start; /* Vertically center the items */
+    justify-content: space-between; /* Ensure spacing between text and button */
+    width: 100%; /* Full width for the contact section */
+    max-width: 500px; /* Optional: Limit the max width for better layout */
+    margin-top: 20px; /* Space above the contact section */
+    transform: translateX(-75%); /* Зміщення вліво на 30% */
+}
+
+/* Стиль для тексту */
+.contact-text {
+    font-size: 24px;
+    
+    font-family: 'Geometria-Light';
+}
+
+/* Кнопка без фону зі зображенням */
+.contact-button {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.contact-button img{
+    height: 80px; /* Set the height for the image */
+    display: block;
 }
