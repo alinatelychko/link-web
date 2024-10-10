@@ -11,3 +11,74 @@
         </button>
     </div>
 </div>
+
+<div class="contact-form">
+    <h2>Залиште ваш контакт</h2>
+    <form id="contactForm">
+        <input type="email" id="email" placeholder="Ваш Email" required />
+        <textarea id="message" placeholder="Ваше повідомлення" required></textarea>
+        <button type="submit">Відправити</button>
+    </form>
+</div>
+
+ 
+<!-- Підключення EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    // Ініціалізація EmailJS з вашим Public Key
+    emailjs.init("NSo7j7K4-aFXpmq-Q"); // Вставте свій Public Key
+
+    // Функція для відправки форми через EmailJS і Telegram
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Забороняє перезавантаження сторінки при відправці форми
+
+        // Збирає дані з форми
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Відправка форми через EmailJS
+        emailjs.send("service_vkkx6va", "template_vndexi9", {
+            user_email: email,
+            message: message
+        }).then(function(response) {
+            alert("Ваше повідомлення успішно відправлено!");
+            console.log("Success:", response);
+
+            // Відправка через Telegram
+            const botToken = "7719043305:AAGQRg2vTkQXh_LkdU_2ZDxdl4q0nASyatw"; // Ваш Token
+            const chatId = "672372776"; // Ваш Chat ID
+
+            const telegramMessage = `Email: ${email}\nMessage: ${message}`;
+
+            // Відправка в Telegram
+            sendToTelegram(telegramMessage);
+
+        }, function(error) {
+            alert("Сталася помилка при відправці повідомлення.");
+            console.log("Error:", error);
+        });
+    });
+
+    // Функція для відправки в Telegram
+    function sendToTelegram(message) {
+        const botToken = "7719043305:AAGQRg2vTkQXh_LkdU_2ZDxdl4q0nASyatw"; // Ваш Token
+        const chatId = "672372776"; // Ваш Chat ID
+
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+        const data = {
+            chat_id: chatId,
+            text: message,
+        };
+
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => console.log("Telegram message sent:", data))
+        .catch(error => console.log("Error sending message to Telegram:", error));
+    }
+</script>

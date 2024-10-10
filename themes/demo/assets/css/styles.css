@@ -686,3 +686,112 @@ padding: 70px 30px;
     height: 80px; /* Set the height for the image */
     display: block;
 }
+
+#LINK-DIGITAL-AGENCY-footer {
+    display: flex;              /* Використовуємо flexbox для вирівнювання */
+    justify-content:left;    /* Центруємо логотип по горизонталі */
+    align-items: flex-end;      /* Розміщуємо логотип внизу сторінки */
+    width: 100%;                /* Ширина контейнера на весь екран */
+    padding: 20px 60px;            /* Додаємо відступи для гарного вигляду */
+}
+
+#LINK-DIGITAL-AGENCY {
+    max-width: 1000px;           /* Обмежуємо ширину логотипу */
+    height: auto;               /* Автоматично змінюємо висоту пропорційно ширині */
+}
+
+.link-footer {
+    display: flex;
+    justify-content: space-between; /* Лівий і правий блоки по боках */
+    align-items: center;
+    padding:15px 60px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    color:#A6A5A7;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.link-footer-left {
+    flex: 1; /* Лівий блок буде займати місце зліва */
+    text-align: left; /* Вирівнювання тексту по лівому краю */
+}
+
+.link-footer-right {
+    display: flex;
+    justify-content: center; /* Вирівнювання по центру для правого блоку */
+    align-items: center;
+    gap: 20px;           /* Відстань між елементами */
+}
+
+.center-footer-content {
+    display: flex;
+    justify-content:baseline; /* Центрування в середині батьківського контейнера */
+    align-items: center;
+    gap: 20px;           /* Відстань між елементами */
+    text-align: center;
+    flex: 1; /* Вирівнювання по центру */
+    margin-left: -12%;
+}
+
+/* Вертикальні лінії між елементами */
+.center-footer-content div {
+    position: relative; 
+    padding: 0 5px;      /* Відступи для відстані навколо тексту */
+}
+
+.center-footer-content div:not(:last-child)::after {
+    content: '|';         /* Символ вертикальної лінії */
+    position: absolute;
+    right: -10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: #A6A5A7;          /* Колір лінії */
+}
+
+/* Стилізація посилань */
+.center-footer-content a {
+    text-decoration: none;
+    color: #A6A5A7;
+}
+
+.center-footer-content a:hover {
+    text-decoration: underline;
+}
+
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
