@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контактна Форма</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Контактна Форма</h2>
+
+<form id="contactForm">
+    <label for="name">Ваше ім'я:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Ваш email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Ваше повідомлення:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <!-- Google reCAPTCHA -->
+    <!-- <div class="g-recaptcha" data-sitekey="your-site-key"></div> -->
+
+    <button type="submit">Надіслати</button>
+</form>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch('send_form.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert('Ваше повідомлення надіслано!');
+        })
+        .catch(error => {
+            alert('Сталася помилка під час відправки.');
+            console.error('Error:', error);
+        });
+    });
+</script>
+
+</body>
+</html>
