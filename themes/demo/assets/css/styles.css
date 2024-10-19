@@ -237,6 +237,7 @@ font-weight: normal;
     font-weight: normal; 
     font-size: 18px;
     margin-top: 10px; /* Відстань зверху для кнопки */
+    cursor: url({{ 'cursor-green.jpg' | media }}), auto;
 }
 
 .custom-button:hover {
@@ -296,6 +297,7 @@ font-weight: normal;
     cursor: pointer; /* Змінюємо курсор на вказівник */
     margin-top: 20px; /* Відступ зверху */
     padding: 20px;
+    cursor: url({{ 'cursor-green.jpg' | media }}), auto;
 }
 
 .scroll-list {
@@ -324,14 +326,14 @@ font-weight: normal;
 }
 
 
-.green-dot {
+/* .green-dot {
     width: 18px; /* Ширина точки */
-    height: 18px; /* Висота точки */
-    background-color: #C9DB47; /* Зелений колір */
-    border-radius: 60%; /* Закруглення для створення кола */
+    /* height: 18px; /* Висота точки */
+    /* background-color: #C9DB47; 
+    border-radius: 60%; 
     margin-left: 30px;
-    color: #000;
-}
+    color: #000; 
+}  */
 
 .privilage_clients_central{
     display: flex; /* Включаємо Flexbox для контейнера */
@@ -430,7 +432,7 @@ margin-left: -10px;
     padding: 0;
     border: none;
     background: none;
-    cursor: pointer;
+    cursor: url({{ 'cursor-green.jpg' | media }}), auto;
 }
 
 .we-help-button img{
@@ -666,6 +668,7 @@ padding: 70px 30px;
     max-width: 500px; /* Optional: Limit the max width for better layout */
     margin-top: 20px; /* Space above the contact section */
     transform: translateX(-75%); /* Зміщення вліво на 30% */
+    cursor: url({{ 'cursor-green.jpg' | media }}), auto;
 }
 
 /* Стиль для тексту */
@@ -680,7 +683,7 @@ padding: 70px 30px;
     padding: 0;
     border: none;
     background: none;
-    cursor: pointer;
+    
 }
 .contact-button img{
     height: 80px; /* Set the height for the image */
@@ -767,6 +770,7 @@ padding: 70px 30px;
     max-width: 700px;
     margin: 0;
     padding: 30px;
+    cursor: url({{ 'cursor-green.jpg' | media }}), auto;
 }
 
 .contact-form h2 {
