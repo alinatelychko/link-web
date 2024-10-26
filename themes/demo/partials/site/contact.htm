@@ -6,33 +6,40 @@
 
     <div class="contact-button-wrapper">
         <div class="contact-text">CONTACT US</div>
-        <button class="contact-button">
-            <img src="{{'we-help-button-pic.png' | media }}" alt="We Help Button" class="button-image">
+        <a href="https://wa.me/420730479001?text=Hello%2C%20I%20am%20interested%20in%20your%20services." target="_blank">
+            <button class="contact-button">
+                <img src="{{'we-help-button-pic.png' | media }}" alt="We Help Button" class="button-image">
+            </button>
+        </a>
         </button>
     </div>
 </div>
 
 <div class="contactFormAndText">
-<div class="contact-form">
-    <h2>Or leave your email and we will contact you ourselves to discuss working together </h2>
-    <div class="form-wrapper">
-        <form id="contactForm">
-            <input type="email" id="email" placeholder="Your Email" required />
-            <textarea id="message" placeholder="Your message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
+    <div class="contact-form">
+        <h2>Or leave your email and we will contact you ourselves to discuss working together</h2>
+        <div class="form-wrapper">
+            <form data-request="onSend" method="post">
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="tel" name="phone" placeholder="Your Phone Number" />
+                <input type="email" name="email" placeholder="Your Email" required />
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div id="form-result"></div> <!-- To show success/error messages -->
+        </div>
     </div>
-</div>
+
         <div class="based-in">
             <p>BASED IN</p>
-            <p>Czechia</p>
+            <p>Czech Republic</p>
         </div>
    
 </div>
 
  
 <!-- Підключення EmailJS -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
     // Ініціалізація EmailJS з вашим Public Key
     emailjs.init("NSo7j7K4-aFXpmq-Q"); // Вставте свій Public Key
@@ -90,4 +97,4 @@
         .then(data => console.log("Telegram message sent:", data))
         .catch(error => console.log("Error sending message to Telegram:", error));
     }
-</script>
+</script> --> 

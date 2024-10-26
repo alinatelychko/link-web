@@ -60,6 +60,8 @@
 
 .round-button:hover {
     background-color: #775f4e; /* Зміна кольору при наведенні */
+    cursor: url('../images/cursor_green.png'), auto;
+
 }
 
 nav {
@@ -86,6 +88,7 @@ nav {
 #round-button-nav {
     /* margin-right: 0; */
     padding: 20px;
+   
 }
 
 #container {
@@ -108,13 +111,14 @@ font-weight: normal;
     color: #A6A5A7;
     font-size: 18px;
     transition: color 0.3s ease; /* Плавна зміна кольору */
-
+cursor: pointer;
 }
 
 #nav-container .nav li a:hover {
     color: #ffffff; /* Колір тексту при наведенні */
     background-color: rgba(166, 165, 167, 0.2); /* Легкий фон для підсвічування */
     border-radius: 5px; /* Закруглення країв фону (за бажанням) */
+    cursor: url('../images/cursor_green.png'), auto;
 }
 
 #nav-container .nav {
@@ -237,11 +241,13 @@ font-weight: normal;
     font-weight: normal; 
     font-size: 18px;
     margin-top: 10px; /* Відстань зверху для кнопки */
-    cursor: url({{ 'cursor-green.jpg' | media }}), auto;
+    cursor: pointer;
 }
 
 .custom-button:hover {
     background-color: #B0C83A; /* Колір кнопки при наведенні */
+
+    cursor: url('../images/cursor_green.png'), auto;
 }
 
 
@@ -297,7 +303,7 @@ font-weight: normal;
     cursor: pointer; /* Змінюємо курсор на вказівник */
     margin-top: 20px; /* Відступ зверху */
     padding: 20px;
-    cursor: url({{ 'cursor-green.jpg' | media }}), auto;
+
 }
 
 .scroll-list {
@@ -318,12 +324,17 @@ font-weight: normal;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease; /* Анімація для збільшення */
+    cursor: pointer;
 }
 
+.scroll-item:hover{
+    cursor: url('../images/cursor_green.png'), auto;
+}
 .scroll-item.active {
     transform: scale(1.5); /* Збільшення активного елемента */
     z-index: 1; /* Піднімає елемент на передній план */
 }
+
 
 
 /* .green-dot {
@@ -432,12 +443,16 @@ margin-left: -10px;
     padding: 0;
     border: none;
     background: none;
-    cursor: url({{ 'cursor-green.jpg' | media }}), auto;
+    cursor: pointer;
+}
+.we-help-button:hover{
+    cursor: url('../images/cursor_green.png'), auto;
 }
 
 .we-help-button img{
     height: 80px;
     display: block;
+    
 }
 /* Картинка всередині кнопки */
 
@@ -668,7 +683,7 @@ padding: 70px 30px;
     max-width: 500px; /* Optional: Limit the max width for better layout */
     margin-top: 20px; /* Space above the contact section */
     transform: translateX(-75%); /* Зміщення вліво на 30% */
-    cursor: url({{ 'cursor-green.jpg' | media }}), auto;
+    
 }
 
 /* Стиль для тексту */
@@ -683,7 +698,11 @@ padding: 70px 30px;
     padding: 0;
     border: none;
     background: none;
-    
+    cursor: pointer;
+}
+
+.contact-button:hover{
+    cursor: url('../images/cursor_green.png'), auto;
 }
 .contact-button img{
     height: 80px; /* Set the height for the image */
@@ -761,6 +780,7 @@ padding: 70px 30px;
 
 .center-footer-content a:hover {
     text-decoration: underline;
+    
 }
 
 
@@ -770,8 +790,9 @@ padding: 70px 30px;
     max-width: 700px;
     margin: 0;
     padding: 30px;
-    cursor: url({{ 'cursor-green.jpg' | media }}), auto;
+    
 }
+
 
 .contact-form h2 {
     margin-bottom: 20px;
@@ -826,6 +847,7 @@ padding: 70px 30px;
 
 #contactForm button:hover {
     background-color: #B08F79;
+    cursor: url('../images/cursor_green.png'), auto;
 }
 
 .form-wrapper {

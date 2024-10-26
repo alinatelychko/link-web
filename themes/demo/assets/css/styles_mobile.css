@@ -1,0 +1,131 @@
+/* Стилі для бургер-меню */
+.hamburger {
+    display: none; /* Сховати бургер на десктопах */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Стилі для зображень на мобільних пристроях */
+.first-pic-mob {
+    display: none; /* Сховати на десктопах */
+}
+
+.about_us_whole_block_mobile{
+    display: none;
+}
+.trusted_companies_wrapper_mobile{
+    display: none;
+}
+.capabilities_block_mobile{
+    display: none;
+}
+
+
+/* Стилі для мобільного вигляду */
+@media (max-width: 768px) {
+    /* Вирівнювання контейнера на мобільних */
+    #container {
+        flex-direction: row; /* Горизонтальне розташування елементів */
+        align-items: center; /* Вирівнювання по центру */
+        justify-content: space-between; /* Простір між елементами */
+        padding: 15px;
+    }
+
+    /* Приховування основного меню на мобільних пристроях */
+    #nav-container {
+        display: none; /* Сховати меню за замовчуванням */
+        position: absolute; /* Позиціюємо його абсолютно */
+        top: 60px; /* Відстань від верху */
+        right: 15px; /* Відстань від правого краю */
+        background: white; /* Фон меню */
+        border-radius: 5px; /* Закруглені кути */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь */
+        z-index: 999; /* Над іншими елементами */
+    }
+
+    /* Відображення бургер-меню */
+    .hamburger {
+        display: block; /* Показати бургер на мобільних */
+        position: fixed; /* Фіксоване позиціонування */
+        right: 25px; /* Відстань від правого краю */
+        
+        z-index: 1000; /* Підняти над іншими елементами */
+    }
+    
+    /* Показати меню, коли клас active */
+    #nav-container.active {
+        display: block; /* Показати меню при активації */
+    }
+
+    #round-button-nav{
+        display: none;
+    }
+
+    #image-container{
+        display: none;
+    }
+
+    .first-pic-mob {
+        display: block; /* Показати контейнер з зображеннями */
+        width: 100%; /* Займає всю ширину екрану */
+    }
+
+    .body-first-pic-mob {
+        width: 100%; /* Зображення займають всю ширину контейнера */
+        height: auto; /* Зберігаємо пропорції зображення */
+    padding: 15px;
+    }
+
+    .about_us_whole_block{
+        display: none;
+    }
+
+    .button-container-mobile {
+        display: flex; /* Включаємо Flexbox для контейнера кнопки */
+        justify-content: center; 
+        width: 100%; /* Ширина контейнера кнопки 100% */
+
+    }
+
+    /* .about_us_whole_block_mobile div{
+        padding: 15px;
+        display: block; 
+       
+    } */
+
+    .about_us_whole_block_mobile {
+        display: block;
+        padding: 15px;
+    }
+
+    .mobile_about_us_pic img{
+        padding:  15px 0px;
+
+    }
+
+    
+    .scroll-item {
+         white-space: nowrap; /* Заборонити перенос рядків */
+     }
+
+
+     .container_privilage_clients{
+        height: 840px;
+     }
+     .trusted_companies_wrapper_mobile{
+        display: block;
+        flex-direction: column;
+        justify-content: center; /* Центруємо по вертикалі */
+        align-items: center; 
+        text-align: center; 
+
+     }
+     .trusted_companies_wrapper{
+        display: none;
+     }
+
+     .capabilities_block{
+        display: none;
+     }
+
+}

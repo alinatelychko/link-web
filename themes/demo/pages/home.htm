@@ -2,6 +2,20 @@ title = "Demonstration"
 url = "/"
 layout = "default"
 ==
+
+function onLoadPartial()
+{
+    // Отримуємо назву partial з AJAX-запиту
+    $partial = post('partial');
+
+    // Повертаємо відповідний partial для заміни контенту
+    return ['#layout-content' => $this->renderPartial('site/' . $partial)];
+}
+==
+
+
+
+<!-- 
 <div class="jumbotron">
     <div class="container">
         {% content "welcome.htm" %}
@@ -20,7 +34,7 @@ layout = "default"
     </p>
 
     <!-- Layouts -->
-    <h3>Layouts</h3>
+    <!-- <h3>Layouts</h3>
     <p class="lead">
         <i class="icon-th-large"></i> &nbsp; Layouts define the page scaffold.
     </p>
@@ -30,10 +44,10 @@ layout = "default"
     </p>
     <p>The page menu and footer in the Demo theme are defined in the layout as well.</p>
 
-    <hr />
+    <hr /> -->
 
     <!-- Pages -->
-    <h3>Pages</h3>
+    <!-- <h3>Pages</h3>
     <p class="lead">
         <i class="icon-copy"></i> &nbsp; Pages hold the content for each URL.
     </p>
@@ -44,10 +58,10 @@ layout = "default"
     <pre>{{ "{% page %}" }}</pre>
     <p>Using a layout for pages is optional &mdash; you can define everything right in the page file.</p>
 
-    <hr />
+    <hr /> -->
 
     <!-- Partials -->
-    <h3>Partials</h3>
+    <!-- <h3>Partials</h3>
     <p class="lead">
         <i class="icon-tags"></i> &nbsp; Partials contain reusable chunks of HTML markup.
     </p>
@@ -60,10 +74,10 @@ layout = "default"
     <pre>{{ "{% partial \"site/footer\" %}" }}</pre>
     <p>Partials can be used inside pages, layouts or other partials.</p>
 
-    <hr />
+    <hr /> -->
 
     <!-- Content blocks -->
-    <h3>Content blocks</h3>
+    <!-- <h3>Content blocks</h3>
     <p class="lead">
         <i class="icon-font"></i> &nbsp; Content blocks are text or HTML blocks that can be edited separately from the page or layout.
     </p>
@@ -73,10 +87,10 @@ layout = "default"
         <pre>{{ "{% content \"content-name.htm\" %}" }}</pre>
     </p>
 
-    <hr />
+    <hr /> -->
 
     <!-- Placeholders -->
-    <h3>Placeholders</h3>
+    <!-- <h3>Placeholders</h3>
     <p class="lead">
         <i class="icon-bookmark"></i> &nbsp; Placeholders allow pages to inject content to a layout.
     </p>
@@ -96,10 +110,10 @@ layout = "default"
         </div>
     </div>
 
-    <hr />
+    <hr /> -->
 
     <!-- Assets -->
-    <h3>Assets</h3>
+    <!-- <h3>Assets</h3>
     <p class="lead">
         <i class="icon-picture"></i> &nbsp; Assets are resource files like images and stylesheets.
     </p>
@@ -117,4 +131,4 @@ layout = "default"
         <p><a href="{{ 'ajax'|page }}" class="btn btn-lg btn-default">Continue to AJAX framework</a></p>
     </div>
 
-</div>
+</div> --> 

@@ -1,10 +1,24 @@
 description = "Default layout"
+
+[contactForm]
 ==
+function onLoadPartial()
+{
+    // Отримуємо назву partial через AJAX-запит
+    $partial = post('partial');
+
+    // Перевіряємо, чи partial існує, і повертаємо його
+    if ($partial) {
+        return ['#layout-content' => $this->renderPartial('site/' . $partial)];
+    }
+}
+==
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Winter CMS - {{ this.page.title }}</title>
+        <title>Link - {{ this.page.title }}</title>
         <meta name="description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="Winter CMS">
@@ -13,6 +27,7 @@ description = "Default layout"
        <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet"> 
         <link href="{{ 'assets/css/styles.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/styles_mobile.css'|theme }}" rel="stylesheet">
         {% styles %}
     </head>
     <body>
@@ -21,15 +36,56 @@ description = "Default layout"
          <header id="layout-header">
             {% partial 'site/header_main' %}
         </header>
+
+        <nav>
+            <div id="container">
+                <div id="logo-container"><img src="{{ 'logo-link-main.png' | media }}" alt="Logo"></div>
+                
+                
+                    <!-- Бургер-іконка -->
+        <div class="hamburger" onclick="toggleMenu()"><img src="{{ 'burger.jpg' | media }}" alt="Logo"></div>
+        
+                 <!-- Основне меню -->
+                <div id="nav-container">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#layout-header">Home</a></li>
+                        <li><a href="#layout-content">About Us</a></li>
+                        <li><a href="#privilage_clients">Privilege</a></li>
+                        <li><a href="#service_list">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div id="round-button-nav">
+                    <a href="#contact">
+                    <button class="round-button">
+                        &#8594;
+                    </button>
+                </a>
+                    </div>
+            </div>
+        </nav>
+        
       <div id="image-container">
              <img id="body-first-pic" src="{{ 'BODY.png' | media }}" alt="Logo-link">
        </div>
 
+<!-- mobile first pictures -->
+<div class="first-pic-mob">
+    <img class="body-first-pic-mob" src="{{ 'mobile_1st_cooperation.png' | media }}" alt="Logo-link-">
+    <img class="body-first-pic-mob" src="{{ 'mobile_LOGO_2nd.png' | media }}" alt="Logo-link">
+    <img class="body-first-pic-mob" src="{{ 'mobile_3rd_unicness.png' | media }}" alt="Logo-link">
+    <img class="body-first-pic-mob" src="{{ 'mobile_4th_personalisation.png' | media }}" alt="Logo-link">
+</div>
+
+
+
       <section id="layout-content">
+        <br><br><br>
          {% partial 'site/about_us' %}
         </section>
 
       <section id="privilage_clients">
+        <br><br><br>
          {% partial 'site/privilage_clients' %}
         </section>
 
@@ -42,6 +98,7 @@ description = "Default layout"
         </section>
 
 
+
         <section id="case_review">
             {% partial 'site/case_review' %}
            </section>
@@ -50,9 +107,12 @@ description = "Default layout"
             {% partial 'site/contact' %}
            </section>
 
+           {% component 'contactForm' %}
+
            <section id="footer_main">
             {% partial 'site/footer_main' %}
            </section>
+
         <!-- Content -->
        {## <section id="layout-content">
             {% page %}
@@ -72,3 +132,10 @@ description = "Default layout"
 
     </body>
 </html>
+
+<script>
+    function toggleMenu() {
+        const navContainer = document.getElementById("nav-container");
+        navContainer.classList.toggle("active");
+    }
+</script>
