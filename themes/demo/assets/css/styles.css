@@ -260,7 +260,7 @@ cursor: pointer;
     align-items: center; /* Center items */
     height: 100vh; /* Full viewport height */
     overflow: hidden; /* Prevent scrollbars */
-    max-height: 900px;
+    max-height: 840px;
 }
 
 /* Style each image wrapper */
@@ -277,15 +277,16 @@ cursor: pointer;
 /* Style the privilege image to have a specific height */
 .privilege-image {
     height: 80%; /* Set height to 80% of its container */
-    transform: translateY(-10%); /* Shift the image up by 10% to hide the top */
+    transform: translateY(-4%); /* Shift the image up by 10% to hide the top */
 }
 
 /* Style the clients image to have the same height */
 .clients-image {
     height: 80%; /* Set height to 80% of its container */
-    transform: translateY(10%); /* Shift the image down by 10% to hide the bottom */
+    transform: translateY(4%); /* Shift the image down by 10% to hide the bottom */
     padding-left: 15%;
     padding-right: 15%;
+    padding-top: 20px;
 }
 
 /* Style the images to ensure they fit nicely */
@@ -633,18 +634,7 @@ padding: 70px 30px;
     font-size: 18px;
 }
 
-/* Ensure responsive design */
-@media (max-width: 768px) {
-    .review-text-block {
-        flex: 1 1 calc(50% - 20px); /* 2 columns on smaller screens */
-    }
-}
 
-@media (max-width: 480px) {
-    .review-text-block {
-        flex: 1 1 100%; /* Full width on mobile */
-    }
-}
 
 /* contact */
 

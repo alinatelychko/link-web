@@ -92,5 +92,53 @@
 
     <!-- mobile -->
 
-    <div class="capabilities_block_mobile"></div>
+<div class="capabilities_block_mobile">
+    <div class="capabilities-header-mobile">
+        <img src="{{ 'mobile_8th_capabilities.png' | media }}" alt="capabilities-header" />
+      </div>
+
+        <!-- Контейнер для каруселі -->
+<div class="carousel-container-capabilities">
+
+    <div class="carousel-capabilities">
+        <img src="{{ 'carousel_1st_capabilities.png' | media }}" alt="Image 1" class="carousel-image">
+        <img src="{{ 'carousel_2nd_capabilities.png' | media }}" alt="Image 2" class="carousel-image">
+        <img src="{{ 'carousel_3rd_capabilities.png' | media }}" alt="Image 3" class="carousel-image">
+        <img src="{{ 'carousel_4th_capabilities.png' | media }}" alt="Image 4" class="carousel-image">
+        
+        <!-- повтор -->
+        <img src="{{ 'carousel_1st_capabilities.png' | media }}" alt="Image 1" class="carousel-image">
+        <img src="{{ 'carousel_2nd_capabilities.png' | media }}" alt="Image 2" class="carousel-image">
+        <img src="{{ 'carousel_3rd_capabilities.png' | media }}" alt="Image 3" class="carousel-image">
+        <img src="{{ 'carousel_4th_capabilities.png' | media }}" alt="Image 4" class="carousel-image">
+        <img src="{{ 'carousel_1st_capabilities.png' | media }}" alt="Image 1" class="carousel-image">
+        <img src="{{ 'carousel_2nd_capabilities.png' | media }}" alt="Image 2" class="carousel-image">
+        <img src="{{ 'carousel_3rd_capabilities.png' | media }}" alt="Image 3" class="carousel-image">
+        <img src="{{ 'carousel_4th_capabilities.png' | media }}" alt="Image 4" class="carousel-image">
+    </div>
+
+    <!-- Кнопки для переходу -->
+    <div class="capabilities-carousel-controls">
+    <button class="capabilities-carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="capabilities-carousel-button next" onclick="moveSlide(1)">&#10095;</button>
 </div>
+</div>
+    </div>
+</div>
+
+
+<script>
+let currentSlide = 0;
+
+function moveSlide(direction) {
+    const carousel = document.querySelector('.carousel-capabilities');
+    const totalSlides = document.querySelectorAll('.carousel-image').length;
+
+    // Зміна індексу слайда
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+
+    // Зсув каруселі для відображення потрібного слайда
+    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+</script>

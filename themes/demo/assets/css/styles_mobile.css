@@ -1,131 +1,413 @@
 /* Стилі для бургер-меню */
 .hamburger {
-    display: none; /* Сховати бургер на десктопах */
-    font-size: 24px;
-    cursor: pointer;
+  display: none; /* Сховати бургер на десктопах */
+  font-size: 24px;
+  cursor: pointer;
 }
 
 /* Стилі для зображень на мобільних пристроях */
 .first-pic-mob {
-    display: none; /* Сховати на десктопах */
+  display: none; /* Сховати на десктопах */
 }
 
-.about_us_whole_block_mobile{
-    display: none;
+.about_us_whole_block_mobile {
+  display: none;
 }
-.trusted_companies_wrapper_mobile{
-    display: none;
+.trusted_companies_wrapper_mobile {
+  display: none;
 }
-.capabilities_block_mobile{
-    display: none;
+.capabilities_block_mobile {
+  display: none;
 }
 
+.case-review-mobile {
+  display: none;
+}
+
+.lets-devise-wrapper-mobile {
+  display: none;
+}
 
 /* Стилі для мобільного вигляду */
 @media (max-width: 768px) {
-    /* Вирівнювання контейнера на мобільних */
-    #container {
-        flex-direction: row; /* Горизонтальне розташування елементів */
-        align-items: center; /* Вирівнювання по центру */
-        justify-content: space-between; /* Простір між елементами */
-        padding: 15px;
-    }
-
-    /* Приховування основного меню на мобільних пристроях */
-    #nav-container {
-        display: none; /* Сховати меню за замовчуванням */
-        position: absolute; /* Позиціюємо його абсолютно */
-        top: 60px; /* Відстань від верху */
-        right: 15px; /* Відстань від правого краю */
-        background: white; /* Фон меню */
-        border-radius: 5px; /* Закруглені кути */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь */
-        z-index: 999; /* Над іншими елементами */
-    }
-
-    /* Відображення бургер-меню */
-    .hamburger {
-        display: block; /* Показати бургер на мобільних */
-        position: fixed; /* Фіксоване позиціонування */
-        right: 25px; /* Відстань від правого краю */
-        
-        z-index: 1000; /* Підняти над іншими елементами */
-    }
-    
-    /* Показати меню, коли клас active */
-    #nav-container.active {
-        display: block; /* Показати меню при активації */
-    }
-
-    #round-button-nav{
-        display: none;
-    }
-
-    #image-container{
-        display: none;
-    }
-
-    .first-pic-mob {
-        display: block; /* Показати контейнер з зображеннями */
-        width: 100%; /* Займає всю ширину екрану */
-    }
-
-    .body-first-pic-mob {
-        width: 100%; /* Зображення займають всю ширину контейнера */
-        height: auto; /* Зберігаємо пропорції зображення */
+  /* Вирівнювання контейнера на мобільних */
+  #container {
+    flex-direction: row; /* Горизонтальне розташування елементів */
+    align-items: center; /* Вирівнювання по центру */
+    justify-content: space-between; /* Простір між елементами */
     padding: 15px;
-    }
+  }
 
-    .about_us_whole_block{
-        display: none;
-    }
+  /* Приховування основного меню на мобільних пристроях */
+  #nav-container {
+    display: none; /* Сховати меню за замовчуванням */
+    position: absolute; /* Позиціюємо його абсолютно */
+    top: 60px; /* Відстань від верху */
+    right: 15px; /* Відстань від правого краю */
+    background: white; /* Фон меню */
+    border-radius: 5px; /* Закруглені кути */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь */
+    z-index: 999; /* Над іншими елементами */
+  }
 
-    .button-container-mobile {
-        display: flex; /* Включаємо Flexbox для контейнера кнопки */
-        justify-content: center; 
-        width: 100%; /* Ширина контейнера кнопки 100% */
+  /* Відображення бургер-меню */
+  .hamburger {
+    display: block; /* Показати бургер на мобільних */
+    position: fixed; /* Фіксоване позиціонування */
+    right: 25px; /* Відстань від правого краю */
+    cursor: pointer;
+    z-index: 1000; /* Підняти над іншими елементами */
+  }
 
-    }
 
-    /* .about_us_whole_block_mobile div{
+  .hamburger:hover{
+    cursor: url('../images/cursor_green.png'), auto;
+}
+ 
+ /* Відкритий стан мобільного меню */
+ #nav-container.active {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw; /* Розширення меню на всю ширину екрану */
+    max-width: 100%;
+    background-color: rgba(68, 68, 68, 0.8); /* Напівпрозорий фон */
+    backdrop-filter: blur(5px); /* Додає розмиття до фону, якщо потрібно */}
+
+
+#nav-container ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#nav-container ul li {
+    margin: 10px 0;
+}
+
+#nav-container ul li a {
+    color: #fff; /* Колір тексту в мобільному меню */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+#nav-container .nav li:not(:last-child)::after {
+  display: none;
+}
+
+  #round-button-nav {
+    display: none;
+  }
+
+  #image-container {
+    display: none;
+  }
+
+  .first-pic-mob {
+    display: block; /* Показати контейнер з зображеннями */
+    width: 100%; /* Займає всю ширину екрану */
+  }
+
+  .body-first-pic-mob {
+    width: 100%; /* Зображення займають всю ширину контейнера */
+    height: auto; /* Зберігаємо пропорції зображення */
+    padding: 15px;
+  }
+
+  .about_us_whole_block {
+    display: none;
+  }
+
+  .button-container-mobile {
+    display: flex; /* Включаємо Flexbox для контейнера кнопки */
+    justify-content: center;
+    width: 100%; /* Ширина контейнера кнопки 100% */
+  }
+
+  /* .about_us_whole_block_mobile div{
         padding: 15px;
         display: block; 
        
     } */
 
-    .about_us_whole_block_mobile {
-        display: block;
-        padding: 15px;
+    #we_are_multi_mobile img{
+        width: 100%;
     }
 
-    .mobile_about_us_pic img{
-        padding:  15px 0px;
+  .about_us_whole_block_mobile {
+    display: block;
+    padding: 15px;
+  }
+  .mobile_about_us_pic img{
+    width: 100%;
+  }
+  .mobile_about_us_pic img {
+    padding: 15px 0px;
+  }
 
-    }
+  .scroll-item {
+    white-space: nowrap; /* Заборонити перенос рядків */
+  }
 
+  .container_privilage_clients {
+    height: 840px;
+  }
+/* 
+  .privilage_clients_central{
+width: 100%;
+
+  } */
+  .trusted_companies_wrapper_mobile {
+    display: block;
+    flex-direction: column;
+    justify-content: center; /* Центруємо по вертикалі */
+    align-items: center;
+    text-align: center;
+  }
+  .trusted_companies_wrapper {
+    display: none;
+  }
+
+  .we_help_content{
+    margin-top: 40px;
+
+  }
+
+  .capabilities_block {
+    display: none;
+  }
+
+  .capabilities_block_mobile {
+    display: block;
+  }
+
+  .capabilities_block_mobile {
+    padding: 60px;
+  }
+  .capabilities-header-mobile img{
+  width: 100%;
+  margin-right: auto;
     
-    .scroll-item {
-         white-space: nowrap; /* Заборонити перенос рядків */
-     }
+    }
+  /* Контейнер для карусели */
+  .carousel-container-capabilities {
+    position: relative;
+    max-width: 100%; /* Максимальная ширина контейнера */
+    overflow: hidden; /* Скрыть лишние части изображения */
+    width: 100vw; /* Ширина на всю ширину окна */
+    height: auto;
+    margin: auto; /* Центрирование контейнера */
+  }
 
+  /* Карусель изображений */
+  .carousel-capabilities {
+    display: flex; /* Используем flexbox для горизонтального расположения */
+    transition: transform 0.5s ease-in-out; /* Анимация при переходе */
+    align-items: center; /* Вертикальное центрирование изображений */
+  }
 
-     .container_privilage_clients{
-        height: 840px;
-     }
-     .trusted_companies_wrapper_mobile{
-        display: block;
-        flex-direction: column;
-        justify-content: center; /* Центруємо по вертикалі */
-        align-items: center; 
-        text-align: center; 
+  /* Изображения внутри карусели */
+  .carousel-image {
+    width: 100%; /* Ширина изображения 60% контейнера */
 
-     }
-     .trusted_companies_wrapper{
-        display: none;
-     }
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    flex-shrink: 0; /* Не позволяем уменьшать ширину изображения */
+    margin: 0 auto; /* Центрирование изображений */
+    margin: 20px auto;
+  }
 
-     .capabilities_block{
-        display: none;
-     }
+  /* Стиль для кнопок управления */
+  .capabilities-carousel-controls {
+    display: flex;
+    justify-content: center; /* Центрируем кнопки */
+    gap: 20px; /* Расстояние между кнопками */
+    position: absolute;
+    bottom: 10px; /* Расположение кнопок снизу */
+    width: 100%;
+  }
 
+  .capabilities-carousel-button {
+    background: none;
+    border: none;
+    color: #333; /* Цвет кнопок */
+    font-size: 24px; /* Размер шрифта кнопок */
+    cursor: pointer; /* Курсор при наведении */
+  }
+
+  .capabilities-carousel-button:hover {
+    color: #666; /* Цвет при наведении */
+  }
+
+  .HEAR-WHAT-text {
+    display: none;
+  }
+
+  /* Mobile Carousel Styles */
+  .case-review-mobile {
+    background-color: #e3dedb; /* Background color for the main container */
+    padding: 30px; /* Padding around the reviews */
+  }
+
+  /* Title styling */
+  .HEAR-WHAT-text-mobile {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+
+  .HEAR-WHAT-text-mobile img {
+    max-width: 100%; /* Ensure image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+    padding-top: 20px; /* Maintain spacing */
+  }
+
+  /* Carousel Container for Mobile Reviews */
+  .carousel-container-reviews {
+    position: relative; /* Positioning relative for child elements */
+    width: 100%; /* Full width of the container */
+    overflow: hidden; /* Hide overflow for a neat effect */
+  }
+
+  .carousel-reviews {
+    display: flex; /* Use flexbox for horizontal layout */
+    transition: transform 0.5s ease-in-out; /* Smooth transition for slide movement */
+  }
+
+  /* Review Block for Mobile */
+  .review-text-block {
+    background-color: #d1cac6; /* Light grey background */
+    border-radius: 25px; /* Rounded corners */
+    padding: 20px; /* Padding inside each review block */
+    flex: 0 0 100%; /* Each block takes 100% width */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin: 20px 0; /* Margin to create spacing between blocks */
+  }
+
+  /* Review images */
+  .review-pic img {
+    height: 70px; /* Height for review images */
+    margin: auto; /* Center the image */
+  }
+
+  /* Review header styles */
+  .review-text-header {
+    font-size: 22px; /* Font size for review header */
+    font-weight: bold; /* Bold font for header */
+    margin-top: 15px; /* Spacing above the header */
+  }
+
+  /* Review main text */
+  .review-text-main {
+    font-size: 18px; /* Font size for main review text */
+    margin-top: 10px; /* Spacing above the main text */
+    line-height: 1.5; /* Line height for readability */
+  }
+
+  /* Reviewer info */
+  .review-text-list {
+    margin-top: 15px; /* Spacing above reviewer info */
+    font-size: 18px; /* Font size for reviewer info */
+  }
+
+  /* Carousel Controls */
+  .carousel-controls {
+    display: flex; /* Align buttons horizontally */
+    justify-content: center; /* Center controls */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Space above the buttons */
+  }
+
+  /* Carousel Button Styles */
+  .carousel-button {
+    background: none; /* No background for buttons */
+    border: none; /* No borders */
+    color: #333; /* Color for buttons */
+    font-size: 24px; /* Font size for button text */
+    cursor: pointer; /* Pointer cursor */
+  }
+
+  .carousel-button:hover {
+    color: #666; /* Change color on hover */
+  }
+
+  .case-review-mobile {
+    display: block;
+  }
+
+  .case-review {
+    display: none;
+  }
+
+  .lets-devise-wrapper {
+    display: none;
+  }
+  .lets-devise-wrapper-mobile {
+    display: flex;
+    flex-direction: column; /* Складові вертикально */
+    align-items: center; /* Центрування по горизонталі */
+    width: 100%; /* Повна ширина для контейнера */
+    margin: 0 auto; /* Центрування блоку */
+    text-align: center; /* Центрування тексту */
+    padding-top: 30px;
+  }
+  .lets-devise-mobile {
+    display: block;
+    margin-left: auto;
+  }
+  .lets-devise-mobile img {
+    height: 150px;
+    display: block;
+    margin-left: auto; /* Вирівнювання зображення по правій стороні */
+  }
+
+  /* Контейнер для тексту та кнопки */
+  .contact-button-wrapper {
+    display: flex; /* Display items in a horizontal row */
+    align-items: center; /* Вертикальне центрування елементів */
+    justify-content: center; /* Центрування всередині контейнера */
+    max-width: 250px; /* Опційне обмеження ширини для зручного розміщення */
+    margin-top: 20px; /* Відступ згори */
+    gap: 10px; /* Відступ між текстом і кнопкою */
+    padding-top: 30px;
+    transform: translateX(0%); /* Зміщення вліво на 30% */
+  }
+
+  /* Стиль для тексту */
+  .contact-text {
+    font-size: 18px; /* Зменшений розмір шрифту для мобільної версії */
+    font-family: "Geometria-Light";
+    margin-bottom: 25px;
+  }
+
+  /* Кнопка */
+  .contact-button img {
+    height: 60px; /* Зменшений розмір зображення кнопки */
+    display: block;
+  }
+
+  .contactFormAndText {
+    display: block;
+   
+  }
+
+  .contactFormAndText div h2{
+    font-size: 20px;
+  }
+
+  #LINK-DIGITAL-AGENCY {
+    max-width: 350px;           /* Обмежуємо ширину логотипу */
+    height: auto;               /* Автоматично змінюємо висоту пропорційно ширині */
+}
+
+.link-footer{
+    display: block;
+    align-items: center;
+}
+.link-footer-left{
+    text-align: center; 
+    margin-bottom: 15px;
+}
 }
