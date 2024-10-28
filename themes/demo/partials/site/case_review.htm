@@ -171,15 +171,15 @@
         </div>
         <!-- Кнопки для перехода -->
         <div class="carousel-controls">
-            <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+            <button class="carousel-button prev" onclick="moveSlide2(-1)">&#10094;</button>
+            <button class="carousel-button next" onclick="moveSlide2(1)">&#10095;</button>
         </div>
     </div>
 </div>
 
 
 <script>
-function moveSlide(direction) {
+function moveSlide2(direction) {
     const carousel = document.querySelector('.carousel-reviews'); // Select the carousel wrapper
     const slides = document.querySelectorAll('.review-text-block'); // Select all review blocks
     const totalSlides = slides.length; // Get the total number of slides

@@ -780,7 +780,8 @@ padding: 70px 30px;
     max-width: 700px;
     margin: 0;
     padding: 30px;
-    
+    padding-left: ;
+
 }
 
 
@@ -805,7 +806,7 @@ padding: 70px 30px;
 .contactFormAndText{
 
     display: flex;
-    justify-content:flex-start;
+    justify-content:space-between;
     align-items: flex-start;
 
 }
@@ -847,8 +848,9 @@ padding: 70px 30px;
 }
 
 .based-in {
-    padding-left: 20px;
+   
     padding-top: 50px;
+   
 
 }
 
@@ -865,3 +867,41 @@ padding: 70px 30px;
     color: #A6A5A7;
 }
 
+.based_social{
+    display: flex;
+    justify-content:baseline;
+    align-items:normal;
+    margin-left: -30%;
+gap:200px;
+
+
+}
+.social_media {
+    text-align: center; /* Центрує весь блок соціальних медіа */
+
+    padding-top: 50px;
+    
+}
+
+.social_media_text {
+    font-size: 20px;
+    font-family: 'CenturyGothic';
+    color: #282828;
+    margin-bottom: 10px;
+}
+
+.social_media_links {
+    display: flex;
+    justify-content: center; /* Вирівнює іконки по центру */
+    gap: 10px; /* Відступ між іконками */
+}
+
+.social_media_links a img {
+    width: 30px; /* Зменшений розмір іконок */
+    height: 30px; /* Висота іконок */
+    transition: transform 0.3s ease; /* Анімація при наведенні */
+}
+
+.social_media_links a img:hover {
+    transform: scale(1.1); /* Збільшує іконку при наведенні */
+}

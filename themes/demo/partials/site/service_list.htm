@@ -119,8 +119,8 @@
 
     <!-- Кнопки для переходу -->
     <div class="capabilities-carousel-controls">
-    <button class="capabilities-carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="capabilities-carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+    <button class="capabilities-carousel-button prev" onclick="moveSlide1(-1)">&#10094;</button>
+    <button class="capabilities-carousel-button next" onclick="moveSlide1(1)">&#10095;</button>
 </div>
 </div>
     </div>
@@ -130,7 +130,7 @@
 <script>
 let currentSlide = 0;
 
-function moveSlide(direction) {
+function moveSlide1(direction) {
     const carousel = document.querySelector('.carousel-capabilities');
     const totalSlides = document.querySelectorAll('.carousel-image').length;
 
