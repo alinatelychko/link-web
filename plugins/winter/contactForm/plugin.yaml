@@ -1,7 +1,0 @@
-plugin:
-    name: Contact Form
-    author: YourNameOrCompany
-    description: A plugin that provides a simple contact form.
-    icon: icon-envelope
-    homepage: https://yourwebsite.com
-    plugin_code: Winter.ContactForm

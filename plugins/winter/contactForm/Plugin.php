@@ -1,20 +1,29 @@
 <?php
 
-namespace Winter\ContactForm; // Make sure this matches your folder structure
+namespace Winter\Contactform;
 
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
+    public function pluginDetails()
+    {
+        return [
+            'name' => 'Contact Form Plugin',
+            'description' => 'A simple contact form',
+            'author' => 'Your Name',
+            'icon' => 'icon-envelope'
+        ];
+    }
+
     public function registerComponents()
     {
         return [
-            'Winter\ContactForm\Components\ContactForm' => 'contactForm',
+            'Winter\Contactform\Components\ContactFormComponent' => 'contactForm',
         ];
     }
     
-    public function registerSettings()
-    {
-        // Optional: Register any settings if needed
+
+    public function registerSettings(){
     }
 }

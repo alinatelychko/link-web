@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'wintercms/winter',
-        'pretty_version' => 'v1.2.6',
-        'version' => '1.2.6.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'b14eab9e9f358c56b6b995c18c6dc4a9a667f0af',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -654,6 +654,15 @@
             'install_path' => __DIR__ . '/../php-parallel-lint/php-parallel-lint',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'phpmailer/phpmailer' => array(
+            'pretty_version' => 'v6.9.2',
+            'version' => '6.9.2.0',
+            'reference' => 'a7b17b42fa4887c92146243f3d2f4ccb962af17c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpmailer/phpmailer',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'phpoption/phpoption' => array(
             'pretty_version' => '1.9.3',
@@ -1392,9 +1401,9 @@
             'dev_requirement' => false,
         ),
         'wintercms/winter' => array(
-            'pretty_version' => 'v1.2.6',
-            'version' => '1.2.6.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'b14eab9e9f358c56b6b995c18c6dc4a9a667f0af',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

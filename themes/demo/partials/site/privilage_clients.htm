@@ -43,11 +43,13 @@
 
 
 <script>
-const scrollContainer = document.querySelector('.scroll-container');
+ const scrollContainer = document.querySelector('.scroll-container');
 const scrollList = document.querySelector('.scroll-list');
 const scrollItems = document.querySelectorAll('.scroll-item');
 
-let scrollPosition = 0; // Позиція скроллу
+let scrollPosition = 0; // Позиція прокрутки
+let startY; // Початкова позиція Y при дотику
+let currentY; // Поточна позиція Y при дотику
 
 // Функція для оновлення активного елемента
 function updateActiveItem() {
@@ -55,7 +57,7 @@ function updateActiveItem() {
     scrollItems.forEach(item => {
         const itemRect = item.getBoundingClientRect();
         const itemCenterY = itemRect.top + (itemRect.height / 2);
-        
+
         // Перевіряємо, чи центр елемента в центрі контейнера
         if (itemCenterY >= centerY - (itemRect.height / 2) && itemCenterY <= centerY + (itemRect.height / 2)) {
             item.classList.add('active'); // Додаємо клас для активного елемента
@@ -65,7 +67,7 @@ function updateActiveItem() {
     });
 }
 
-// Прокрутка вгору/вниз
+// Прокрутка за допомогою миші
 scrollContainer.addEventListener('wheel', (event) => {
     event.preventDefault(); // Припиняємо стандартну прокрутку
     scrollPosition += event.deltaY; // Отримуємо швидкість прокрутки
@@ -79,6 +81,31 @@ scrollContainer.addEventListener('wheel', (event) => {
 
     scrollList.style.transform = `translateY(-${scrollPosition}px)`; // Застосовуємо прокрутку
     updateActiveItem(); // Оновлюємо активні елементи
+});
+
+// Прокрутка за допомогою дотику
+scrollContainer.addEventListener('touchstart', (event) => {
+    startY = event.touches[0].clientY; // Початкова позиція дотику
+});
+
+scrollContainer.addEventListener('touchmove', (event) => {
+    event.preventDefault(); // Вимикаємо стандартну прокрутку
+    currentY = event.touches[0].clientY; // Поточна позиція дотику
+    const deltaY = startY - currentY; // Різниця в позиції для визначення напрямку
+
+    scrollPosition += deltaY; // Оновлюємо позицію прокрутки
+
+    // Обчислюємо нову позицію
+    if (scrollPosition > (scrollItems.length * 40)) {
+        scrollPosition = 0; // Скидаємо позицію, якщо перевищуємо кількість елементів
+    } else if (scrollPosition < 0) {
+        scrollPosition = (scrollItems.length * 40) - 40; // Скидаємо позицію, якщо нижче нуля
+    }
+
+    scrollList.style.transform = `translateY(-${scrollPosition}px)`; // Застосовуємо прокрутку
+    updateActiveItem(); // Оновлюємо активні елементи
+
+    startY = currentY; // Оновлюємо початкову позицію для наступного руху
 });
 
 // Запускаємо оновлення активного елемента

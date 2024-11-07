@@ -39,7 +39,7 @@ function onLoadPartial()
 
         <nav>
             <div id="container">
-                <div id="logo-container"><img src="{{ 'logo-link-main.png' | media }}" alt="Logo"></div>
+                <div id="logo-container"><img src="{{ 'Logo-link-main.jpeg' | media }}" alt="Logo"></div>
                 
                 
                     <!-- Бургер-іконка -->
@@ -129,13 +129,31 @@ function onLoadPartial()
         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
         {% snowboard all %}
         {% scripts %}
-
+        {% component 'contactForm' %}
     </body>
 </html>
 
 <script>
-    function toggleMenu() {
-        const navContainer = document.getElementById("nav-container");
-        navContainer.classList.toggle("active");
+function toggleMenu() {
+    const navContainer = document.getElementById("nav-container");
+    navContainer.classList.toggle("active");
+
+    // Якщо меню активне, додати подію кліку на кожен пункт меню
+    if (navContainer.classList.contains("active")) {
+        document.querySelectorAll("#nav-container a").forEach(item => {
+            item.addEventListener("click", closeMenuOnClick);
+        });
+    } else {
+        // Якщо меню закрите, видалити події
+        document.querySelectorAll("#nav-container a").forEach(item => {
+            item.removeEventListener("click", closeMenuOnClick);
+        });
     }
+}
+
+// Функція для закриття меню
+function closeMenuOnClick() {
+    const navContainer = document.getElementById("nav-container");
+    navContainer.classList.remove("active");
+}
 </script>

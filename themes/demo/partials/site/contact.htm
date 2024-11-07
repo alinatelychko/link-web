@@ -11,7 +11,6 @@
                 <img src="{{'we-help-button-pic.png' | media }}" alt="We Help Button" class="button-image">
             </button>
         </a>
-        </button>
     </div>
 </div>
 
@@ -31,15 +30,11 @@
     </div>
 </div>
 
-
-
-
-
 <div class="contactFormAndText">
     <div class="contact-form">
         <h2>Or leave your email and we will contact you ourselves to discuss working together</h2>
         <div class="form-wrapper">
-            <form data-request="onSend" method="post">
+            <form method="post" id="contactForm">
                 <input type="text" name="name" placeholder="Your Name" required />
                 <input type="tel" name="phone" placeholder="Your Phone Number" />
                 <input type="email" name="email" placeholder="Your Email" required />
@@ -49,95 +44,50 @@
             <div id="form-result"></div> <!-- To show success/error messages -->
         </div>
     </div>
-<div class="based_social">
+
+    <div class="based_social">
         <div class="based-in">
             <p>BASED IN</p>
             <p>Czech Republic</p>
         </div>
-<div class="social_media">
-    <div class="social_media_text">OUR SOCIAL MEDIA</div>
-    <div class="social_media_links">
-   <a href="https://www.instagram.com/link.us.eu" target="_blank">
-    <img src="{{ 'insta.png' | media }}" alt="">
-   </a>
-   <a href="https://www.facebook.com/profile.php?id=61565505455660
-   " target="_blank">
-    <img src="{{ 'facebook.png' | media }}" alt="">
-   </a>
-   <a href="https://www.tiktok.com/@link.us.eu" target="_blank">
-    <img src="{{ 'tiktok.png' | media }}" alt="">
-   </a>
-   <a href="https://t.me/linkuseu" target="_blank">
-    <img src="{{ 'telegramm.png' | media }}" alt="">
-   </a>
-</div>
-   
-</div>
-</div>
-
-   
+        <div class="social_media">
+            <div class="social_media_text">OUR SOCIAL MEDIA</div>
+            <div class="social_media_links">
+                <a href="https://www.instagram.com/link.us.eu" target="_blank">
+                    <img src="{{ 'insta.png' | media }}" alt="">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61565505455660" target="_blank">
+                    <img src="{{ 'facebook.png' | media }}" alt="">
+                </a>
+                <a href="https://www.tiktok.com/@link.us.eu" target="_blank">
+                    <img src="{{ 'tiktok.png' | media }}" alt="">
+                </a>
+                <a href="https://t.me/linkuseu" target="_blank">
+                    <img src="{{ 'telegramm.png' | media }}" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 
- 
-<!-- Підключення EmailJS -->
-<!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 <script>
-    // Ініціалізація EmailJS з вашим Public Key
-    emailjs.init("NSo7j7K4-aFXpmq-Q"); // Вставте свій Public Key
+    document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Зупиняє стандартну відправку форми
 
-    // Функція для відправки форми через EmailJS і Telegram
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Забороняє перезавантаження сторінки при відправці форми
+        const formData = new FormData(this); // Створюємо об'єкт FormData з полів форми
+        const xhr = new XMLHttpRequest(); // Створюємо новий XMLHttpRequest
 
-        // Збирає дані з форми
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
-
-        // Відправка форми через EmailJS
-        emailjs.send("service_vkkx6va", "template_vndexi9", {
-            user_email: email,
-            message: message
-        }).then(function(response) {
-            alert("Ваше повідомлення успішно відправлено!");
-            console.log("Success:", response);
-
-            // Відправка через Telegram
-            const botToken = "7719043305:AAGQRg2vTkQXh_LkdU_2ZDxdl4q0nASyatw"; // Ваш Token
-            const chatId = "672372776"; // Ваш Chat ID
-
-            const telegramMessage = `Email: ${email}\nMessage: ${message}`;
-
-            // Відправка в Telegram
-            sendToTelegram(telegramMessage);
-
-        }, function(error) {
-            alert("Сталася помилка при відправці повідомлення.");
-            console.log("Error:", error);
-        });
-    });
-
-    // Функція для відправки в Telegram
-    function sendToTelegram(message) {
-        const botToken = "7719043305:AAGQRg2vTkQXh_LkdU_2ZDxdl4q0nASyatw"; // Ваш Token
-        const chatId = "672372776"; // Ваш Chat ID
-
-        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-        const data = {
-            chat_id: chatId,
-            text: message,
+        xhr.open("POST", "", true); // Відправка на поточну сторінку
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById("form-result").innerHTML = xhr.responseText; // Відображення відповіді
+                document.querySelector("form").reset(); // Очистка форми після успішної відправки
+            }
         };
 
-        fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(data => console.log("Telegram message sent:", data))
-        .catch(error => console.log("Error sending message to Telegram:", error));
-    }
-</script> --> 
+        xhr.send(formData); // Відправка даних форми
+    });
+</script>
