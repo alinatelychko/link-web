@@ -1,2 +1,10 @@
-RewriteEngine On
-RewriteRule ^(.*)$ public/$1 [L]
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Переконайтеся, що звернення йде до файлів або папок
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Перенаправлення всіх запитів у public/
+    RewriteRule ^(.*)$ public/index.php/$1 [L]
+</IfModule>
