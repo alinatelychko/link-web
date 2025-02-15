@@ -13,7 +13,7 @@ if (!$signature || !hash_equals($hash, $signature)) {
 file_put_contents('deploy.log', date('Y-m-d H:i:s') . " Deploy started\n", FILE_APPEND);
 
 // Виконуємо git pull
-$output = shell_exec('cd /home/youruser/public_html && git pull origin main 2>&1');
+$output = shell_exec('cd /home3/linkuseu/public_html && git pull origin main 2>&1');
 file_put_contents('deploy.log', $output, FILE_APPEND);
 
 http_response_code(200);

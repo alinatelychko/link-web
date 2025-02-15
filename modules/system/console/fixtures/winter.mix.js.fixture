@@ -1,4 +1,0 @@
-const mix = require('laravel-mix');
-mix.setPublicPath(__dirname + '/assets');
-
-// Your mix configuration below
