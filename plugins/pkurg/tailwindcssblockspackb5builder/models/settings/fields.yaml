@@ -1,0 +1,55 @@
+tabs:
+    fields:
+        enbbldin:
+            label: Enable build-in blocks
+            type: switch        
+            on: on
+            off: off
+            tab: General            
+        enbcustom:
+            label: Enable custom blocks
+            type: switch        
+            on: on
+            off: off
+            tab: General                        
+        text:
+            label: Custom blocks
+            prompt: 'Add new block'
+            tab: General
+            span: full
+            type: repeater
+            style: collapsed
+            form:
+                fields:
+                    # id:
+                    #     label: ID
+                    #     span: auto
+                    #     placeholder: block-id
+                    #     type: text
+                    label:
+                        label: Label
+                        span: auto
+                        placeholder: Label
+                        type: text
+                        default: 'My new block'
+                    icon:
+                        label: Icon
+                        span: auto
+                        placeholder: 'fa fa-paragraph'
+                        type: text
+                        comment: 'Font Awesome 4 icon. https://fontawesome.com/v4.7.0/icons/'
+                        default: 'fa fa-bars'
+                    category:
+                        label: Category
+                        span: auto
+                        placeholder: Extra
+                        type: text
+                        default: 'Extra'
+                    content:
+                        label: Content
+                        size: huge
+                        span: full
+                        default: '<div class="my-block">This is a simple block</div>'
+                        type: textarea
+
+    

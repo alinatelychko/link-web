@@ -1,0 +1,6 @@
+plugin:
+    name: 'pkurg.tailwindcssblockspackb5builder::lang.plugin.name'
+    description: 'pkurg.tailwindcssblockspackb5builder::lang.plugin.description'
+    author: Vladimir
+    icon: oc-icon-building
+    homepage: ''

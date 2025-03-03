@@ -904,3 +904,19 @@ gap:200px;
 .social_media_links a img:hover {
     transform: scale(1.1); /* Збільшує іконку при наведенні */
 }
+
+
+
+/* page additional css */
+
+.page_general{
+    padding: 60px;
+}
+
+#container-page-nav{
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Center vertically */
+    position: relative; /* To position the round button */
+    height: 100px;
+}
