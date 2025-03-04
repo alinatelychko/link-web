@@ -80,9 +80,11 @@ nav {
     padding: 20px;
     height: 50px;
 }
+
+
 #logo-container img{
-    margin-top: -17px;
-    height: 45px;
+    margin-top: -22px;
+    height: 55px;
 }
 
 #round-button-nav {
@@ -210,7 +212,12 @@ cursor: pointer;
 
 #element3-about-us {
     flex: 1; /* 1/6 */
-    min-width: 100px; /* Мінімальна ширина */
+    min-width: 60px; /* Мінімальна ширина */
+
+}
+
+#element3-about-us img {
+    height: 468px;
 }
 
 #element2-about-us p {

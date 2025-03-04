@@ -34,15 +34,16 @@
     <div class="contact-form">
         <h2>Or leave your email and we will contact you ourselves to discuss working together</h2>
         <div class="form-wrapper">
-            <form method="post" id="contactForm">
-                <input type="text" name="name" placeholder="Your Name" required />
-                <input type="tel" name="phone" placeholder="Your Phone Number" />
-                <input type="email" name="email" placeholder="Your Email" required />
-                <textarea name="message" placeholder="Your message" required></textarea>
+            <form id="contactForm">
+                <input type="text" name="name" id="name" placeholder="Your Name" required />
+                <input type="tel" name="phone" id="phone" placeholder="Your Phone Number" />
+                <input type="email" id="email" name="email" placeholder="Your Email" required />
+                <textarea id="message" name="message" placeholder="Your message" required></textarea>
                 <button type="submit">Send</button>
             </form>
-            <div id="form-result"></div> <!-- To show success/error messages -->
+           
         </div>
+        <div id="form-result"></div> <!-- To show success/error messages -->
     </div>
 
     <div class="based_social">
@@ -73,7 +74,7 @@
 
 
 
-<script>
+<!-- <script>
     document.querySelector("form").addEventListener("submit", function(event) {
         event.preventDefault(); // Зупиняє стандартну відправку форми
 
@@ -89,5 +90,108 @@
         };
 
         xhr.send(formData); // Відправка даних форми
+    });
+</script> -->
+
+
+<!-- 
+<script>
+    // Initialize EmailJS with your Public Key
+    emailjs.init("NSo7j7K4-aFXpmq-Q"); // Insert your actual Public Key here
+
+    // Form submission handler
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevents page reload on form submission
+
+        // Collect form data
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        const resultDiv = document.getElementById("form-result");
+
+        // Send form data via EmailJS
+        emailjs.send("service_vkkx6va", "template_vndexi9", {
+            user_email: email,
+            message: message
+        }).then(function(response) {
+            resultDiv.innerHTML = "<p>Your message has been sent successfully!</p>";
+            console.log("Success:", response);
+
+            // Send message to Telegram
+            sendToTelegram(`Email: ${email}\nMessage: ${message}`);
+
+        }, function(error) {
+            resultDiv.innerHTML = "<p>Error sending message. Please try again.</p>";
+            console.log("Error:", error);
+        });
+    });
+
+    // Function to send message to Telegram
+    function sendToTelegram(message) {
+        const botToken = "7719043305:AAGQRg2vTkQXh_LkdU_2ZDxdl4q0nASyatw"; // Insert your actual bot token here
+        const chatId = "672372776"; // Insert your actual chat ID here
+
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+        const data = {
+            chat_id: chatId,
+            text: message,
+        };
+
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => console.log("Telegram message sent:", data))
+        .catch(error => console.log("Error sending message to Telegram:", error));
+    }
+</script> -->
+
+<script>
+    // Ваш Telegram Bot Token і Chat ID
+    const botToken = "7719043305:AAGQRg2vTkQXh_LkdU_2ZDxdl4q0nASyatw"; 
+    const chatId = "672372776"; // Ваш Chat ID
+
+    // Функція для відправки повідомлення в Telegram
+    function sendToTelegram(message) {
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: message
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                console.log("Telegram message sent:", data);
+            } else {
+                console.log("Telegram API Error:", data);
+            }
+        })
+        .catch(error => console.log("Error sending to Telegram:", error));
+    }
+
+    // Обробка форми
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Забороняє перезавантаження сторінки
+
+        // Збір даних з форми
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Створення тексту повідомлення для Telegram
+        const telegramMessage = `📩 New Contact Form Submission:\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n✉️ Email: ${email}\n📝 Message: ${message}`;
+
+        // Відправка повідомлення через Telegram
+        sendToTelegram(telegramMessage);
+
+        // Виведення результату на сторінці
+        document.getElementById("form-result").innerText = "  Your message was successfully sent!";
     });
 </script>

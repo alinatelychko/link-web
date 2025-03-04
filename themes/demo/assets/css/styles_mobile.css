@@ -3,6 +3,10 @@
   display: none; /* Сховати бургер на десктопах */
   font-size: 24px;
   cursor: pointer;
+  
+}
+.hamburger img {
+  height: 38px;
 }
 
 /* Стилі для зображень на мобільних пристроях */
@@ -49,10 +53,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь */
     z-index: 999; /* Над іншими елементами */
   }
+ 
 
   /* Відображення бургер-меню */
   .hamburger {
-    display: block; /* Показати бургер на мобільних */
+    display: none; /* Показати бургер на мобільних */
     position: fixed; /* Фіксоване позиціонування */
     right: 25px; /* Відстань від правого краю */
     cursor: pointer;
@@ -62,6 +67,10 @@
 
   .hamburger:hover{
     cursor: url('../images/cursor_green.png'), auto;
+}
+
+#back-button-hamburger{
+  display: block;
 }
  
  /* Відкритий стан мобільного меню */
@@ -156,6 +165,17 @@
   .container_privilage_clients {
     height: 840px;
   }
+
+  .scroll-item {
+    font-family: 'Butler-Medium';
+    font-size: 20px;
+    height: 50px; /* Висота кожного елемента */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease; /* Анімація для збільшення */
+    cursor: pointer;
+}
 /* 
   .privilage_clients_central{
 width: 100%;
